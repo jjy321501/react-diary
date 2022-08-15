@@ -47,31 +47,31 @@ const dummyData = [
     id: 1,
     emotion: 1,
     content: "오늘의 일기 1번",
-    date: 1660150133642,
+    date: 1660150133645,
   },
   {
     id: 2,
     emotion: 2,
     content: "오늘의 일기 2번",
-    date: 1660150133643,
+    date: 1660150133646,
   },
   {
     id: 3,
     emotion: 3,
     content: "오늘의 일기 3번",
-    date: 1660150133644,
+    date: 1660480196504,
   },
   {
     id: 4,
     emotion: 4,
     content: "오늘의 일기 4번",
-    date: 1660150133645,
+    date: 1660480196505,
   },
   {
     id: 5,
     emotion: 5,
     content: "오늘의 일기 5번",
-    date: 1660150133646,
+    date: 1660480196506,
   },
 ];
 
@@ -102,7 +102,7 @@ function App() {
     dispatch({
       type: "EDIT",
       data: {
-        id: dataId,
+        id: targetId,
         date: new Date(date).getTime(),
         content,
         emotion,
@@ -117,7 +117,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/new" element={<New />} />
-              <Route path="/edit" element={<Edit />} />
+              <Route path="/edit/:id" element={<Edit />} />
               <Route path="/diary/:id" element={<Diary />} />
             </Routes>
           </div>
